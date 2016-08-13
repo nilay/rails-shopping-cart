@@ -1,0 +1,18 @@
+.authform
+  = form_tag indices_path do
+    = hidden_field_tag 'merchant_url', @merchant_url
+    %h3 Payment Details
+    .form-group
+      = label_tag 'card', 'Card Number'
+      = text_field_tag :card, '', class: "form-control"
+
+    .form-group
+      = label_tag 'name', 'Card Holder Name'
+      = text_field_tag :name, '', class: "form-control"
+
+    .form-group
+      = label_tag 'pin', '3 Digit Pin Number'
+      = text_field_tag :pin, '', class: "form-control"
+
+    = submit_tag "Pay", class: "btn btn-primary"
+

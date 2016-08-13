@@ -1,0 +1,15 @@
+%h3 Products
+
+%div.table-responsive
+  %table.table.table-striped
+    %tbody
+    - @products.each do |product|
+      %tr
+        %td
+          %h4
+            = product.name
+          %p= product.description
+        %td= "$#{product.price}"
+        %td= link_to 'Edit', edit_product_path(product)
+        %td= link_to 'Add to Cart', order_items_path('order_item[product_id]' => product.id, 'order_item[qty]' => 1), :method => :post
+

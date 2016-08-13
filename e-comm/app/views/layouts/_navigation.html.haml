@@ -1,0 +1,16 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{:href =>"/"} E-comm Test Application
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        -if current_user
+          %li= "Welcome #{current_user.first_name}"
+          %li
+            = link_to "Add Product", new_product_path
+          %li= link_to "My Cart", carts_path
+          %li
+            = link_to "Logout", session_path(1), :method => :delete
+        -else
+          %li
+            = link_to "Login", new_session_path

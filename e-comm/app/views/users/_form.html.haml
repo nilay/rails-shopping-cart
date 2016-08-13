@@ -1,0 +1,27 @@
+.authform
+  = simple_form_for(@user) do |f|
+    = f.error_notification
+
+    .form-group
+      .form-inputs
+        = f.input :first_name
+
+    .form-group
+      .form-inputs
+        = f.input :last_name
+
+    .form-group
+      .form-inputs
+        = f.input :email
+
+    .form-group
+      .form-inputs
+        = f.input :password
+
+    .form-group
+      .form-inputs
+        = f.input :password_confirmation
+
+
+    .form-actions
+      = f.button :submit, "Submit"
